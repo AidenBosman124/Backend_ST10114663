@@ -1,0 +1,39 @@
+// ----- API Tests -----
+GET https://localhost:3000/api HTTP/1.1
+###creates token for user
+POST https://localhost:3000/api/check-auth HTTP/1.1
+{
+    "name":"Ana Bosman",
+    "derpartment": "derpartment12",
+    "username": "ana01",
+    "password": "4321"
+}
+###
+// ----- View Users -----
+GET https://localhost:3000/api/users HTTP/1.1
+
+###
+// ----- Signup User -----
+POST https://localhost:3000/api/users/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"Aiden Bosman",
+    "derpartment": "derpartment1",
+    "username": "aiden",
+    "password": "1234"
+}
+
+### View Posts
+GET https://localhost:3000/api/posts HTTP/1.1
+
+###create a post
+POST https://localhost:3000/api/posts/create HTTP/1.1
+Content-Type: application/json 
+Authorization: bearer 
+
+### delete a post
+DELETE https://localhost:3000/api/post/id HTTP/1.1
+Authorization: bearer 
+
+###
